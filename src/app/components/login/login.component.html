@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-card-content>
+        <div mat-dialog-content class="registration-form">
+            <h2 class="form-title">Giriş Yap
+                <hr>
+            </h2>
+
+            <form [formGroup]="registerForm" (ngSubmit)="loginUser()">
+
+                <div class="form-container">
+
+
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Email</mat-label>
+                        <input class="genis-input" type="email" formControlName="userEmail" matInput
+                            placeholder="Email giriniz" maxlength="70">
+                        <mat-icon matSuffix>email</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Şifre</mat-label>
+                        <input class="genis-input" type="{{ showPassword ? 'text' : 'password' }}"
+                            formControlName="userPassword" matInput placeholder="Şifre giriniz" maxlength="10">
+                        <mat-icon matSuffix (click)="toggleShowPassword()">
+                            {{ showPassword ? 'visibility' : 'visibility_off' }}
+                        </mat-icon>
+
+                        <div class="custom-hint" *ngIf="isPasswordHintVisible()">
+                            Şifre 10 karakterden oluşmalıdır ve en az bir küçük harf, bir büyük harf, bir rakam ve
+                            bir özel karakter içermelidir.
+                        </div>
+                    </mat-form-field>
+
+
+
+                    <div class="button-container">
+                        <button mat-raised-button color="accent">Giriş Yap</button>
+                    </div>
+                    <span class="span-container">Ya da <br>Hala Kayıt Olmadınız mı?</span>
+                    <div class="button-container">
+                        <button mat-raised-button class="button-kaydol" routerLink="/register">Kayıt Ol</button>
+                    </div>
+                </div>
+
+
+
+
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,100 @@
+.product-form-container {
+    max-width: 40%;
+    margin: 0 auto;
+    padding: 60px;
+    border: 1px solid #ccc;
+    border-radius: 42px;
+    margin-top: 4%;
+    box-shadow: 0px 4px 8px 0px rgb(0 45 215);
+  }
+  
+  .product-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  select {
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .add-button {
+    background-color: #1976D2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-button:hover {
+    background-color: #1565C0;
+  }
+  
+
+/*image style section*/
+
+.image-preview-container {
+    display: flex;
+    flex-direction: column ;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    margin-top: 3%;
+}
+
+.image-preview-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Aralardaki boşluğu ayarlayabilirsiniz */
+}
+
+.image-preview {
+    flex: 0 0 calc(20% - 20px); /* Resim kutularının genişliğini ayarlayın */
+    max-width: calc(20% - 20px); /* Resim kutularının maksimum genişliği */
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.prewiev-img-width {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.file-input-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+mat-icon {
+  font-size: 24px;
+  margin-left: -101%;
+}
+
+mat-hint{
+    margin-left: 95%;
+    font-size: small;
+    margin-top: -1%;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+
+
+  

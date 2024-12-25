@@ -1,0 +1,25 @@
+<div class="card-container">
+    <div *ngFor="let item of (SelectedCategoryId ? filterProductsByCategory(SelectedCategoryId) : productList)">
+        <mat-card class="product-card">
+            <mat-card-header>
+                <mat-card-title id="product-header"> {{item.productName}}</mat-card-title>
+            </mat-card-header>
+
+            <div *ngIf="hasMatchingImage(item.productId)">
+                <img class="custom-card-image" mat-card-image src="{{ getMatchingImageUrl(item.productId) }}"
+                    alt="img product">
+            </div>
+
+            <mat-card-content id="card-content-container">
+                <span id="product-price"> {{item.productPrice}}TL</span>
+                <span id="product-date">{{ formatListingDate(item.listingDate) }}</span>
+                <!-- <button mat-button id="product-detail-button" (click)="onCardClicked(item.productId)">Ürünü
+                    incele</button> -->
+
+            </mat-card-content>
+            <mat-card-actions><button mat-fab extended id="product-detail-button"
+                    (click)="onCardClicked(item.productId)">Ürünü
+                    incele</button></mat-card-actions>
+        </mat-card>
+    </div>
+</div>

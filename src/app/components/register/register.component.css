@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.form-title {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.registration-form {
+  text-align: center;
+  width: auto;
+  margin-top: -16px;
+}
+
+/* Kartın genişliğini belirlemek için (isteğe bağlı) */
+mat-card {
+    max-width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 69px;
+    padding: 19px;
+    padding-top: 0%;
+    box-shadow: 0px 4px 8px 0px rgb(0 45 215);
+    margin: 90px auto auto auto;
+    z-index: 2;
+    opacity: 0.89;
+    height: 800px;
+    top: -6%;
+}
+
+
+.form-title {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.form-container {
+    margin-top: 0px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.form-field {
+    width: 100%;
+    max-width: 348px;
+    margin-bottom: 0px;
+
+}
+
+.form-field .mat-icon {
+  cursor: pointer;
+}
+
+.align-end {
+  align-self: flex-end;
+}
+
+/* Örneğin, formun üzerinde boşluk bırakmak için */
+.registration-form {
+  margin-top: 20px;
+}
+
+/* Form içindeki tüm input alanlarının genişliğini ayarlamak için */
+.genis-input {
+  width: 100%;
+}
+
+
+/* İcon ve Hint'i düzenlemek için */
+mat-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+mat-hint {
+  vertical-align: middle;
+}
+
+.button-kaydol {
+  background-color: green;
+  color: white;
+
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  /* Gerekirse düzenleyebilirsiniz */
+}
+
+.span-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  top: 0;
+  left: 0;
+  color: green;
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+
+mat-progress-bar{
+  /* background-image: url('src/assets/images/registerBackground.jpg'); */
+  background-size: cover;
+}
+
+
+.custom-hint {
+  background-color: #fff;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  padding: 5px 10px;
+  border-radius: 4px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.form-field:hover .custom-hint,
+.genis-input:focus+.custom-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-top-right {
+  top: 70px; /* Uygun bir değer belirleyerek toastın yüksekliğini ayarlayın */
+  right: 20px; /* Uygun bir değer belirleyerek toastın sağ kenar boşluğunu ayarlayın */
+}
+
+/* Toastr bildirimlerini sol üst köşeye yerleştir */
+.toast-top-left {
+  top: 70px;
+  left: 20px;
+}

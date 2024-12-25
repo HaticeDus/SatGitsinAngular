@@ -1,0 +1,253 @@
+/* Global styles */
+/* body { */
+/* font-family: 'Roboto', sans-serif; */
+/*max-width: 1600px;/* İstenilen maksimum genişliği buradan ayarlayabilirsiniz */
+/* margin: 0 auto; /* Sayfayı merkeze hizalamak için kullanılır */
+/* } */
+
+/* Toolbar styles */
+.custom-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111f79;
+  color: white;
+  padding: 10px;
+  box-shadow: -4px 8px 20px rgb(68 143 229);
+  /* Global styles */
+
+
+  .toolbar-title {
+    font-size: xx-large;
+    cursor: pointer;
+    margin-left: 3%;
+  }
+
+  .toolbar-item {
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #e7e7e7;
+    margin-right: 3%;
+    margin-left: 10%;
+
+  }
+
+  .toolbar-item mat-icon {
+    margin-right: 5px;
+    /* İkon ve metin arasına boşluk bırak */
+    /* background-color:white !important; */
+  }
+
+  .button-container {
+    /* flex-direction: column; */
+    display: flex;
+    align-items: center;
+    left: 35%;
+    position: absolute;
+  }
+
+
+  /* Menu, Chat, Register, Login, Logout buttons */
+  .menu-button,
+  .chat-button,
+  .register-button,
+  .login-button,
+  .logout-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-left: 5px;
+    /* Azaltılan mesafe */
+    transition: transform 0.2s ease;
+  }
+
+  .menu-button:hover,
+  .chat-button:hover,
+  .register-button:hover,
+  .login-button:hover,
+  .logout-button:hover {
+    background-color: rgba(250, 36, 214, 0.1);
+    transform: scale(1.2);
+  }
+
+  .menu-button,
+  .chat-button,
+  .register-button,
+  .login-button,
+  .logout-button mat-icon {
+    font-size: 24px;
+  }
+
+  /* Category menu styles */
+  .category-menu {
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+
+  /* Responsive adjustments */
+  @media (max-width: 1000px) {
+    .custom-toolbar {
+      /* flex-direction: column;
+    align-items: flex-start; */
+
+    }
+
+    .toolbar-item,
+    .menu-button,
+    .chat-button,
+    .register-button,
+    .login-button,
+    .logout-button {
+      margin: 5px 0;
+    }
+  }
+
+
+
+  /* FOOTER */
+  .custom-footer {
+    background-color: #28814f;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: absolute;
+    margin-block-end: -24%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: -27%;
+  }
+
+  .footer-links {
+
+    display: flex;
+    gap: 59px;
+    margin-inline-end: -26%;
+
+  }
+
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: #ffc107;
+  }
+}
+
+/* Menu, Chat, Register, Login, Logout buttons */
+.menu-button,
+.chat-button,
+.register-button,
+.login-button,
+.logout-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-left: 5px;
+  /* Azaltılan mesafe */
+  transition: transform 0.2s ease;
+}
+
+.menu-button:hover,
+.chat-button:hover,
+.register-button:hover,
+.login-button:hover,
+.logout-button:hover {
+  background-color: rgba(250, 36, 214, 0.1);
+  transform: scale(1.2);
+}
+
+.menu-button,
+.chat-button,
+.register-button,
+.login-button,
+.logout-button mat-icon {
+  font-size: 24px;
+}
+
+
+.mat-menu-item {
+  display: block;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+.custom-footer {
+  background-color: #ff4081;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: absolute;
+  margin-block-end: -24%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: -27%;
+}
+
+.footer-links {
+
+  display: flex;
+  gap: 59px;
+  margin-inline-end: -26%;
+
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffc107;
+}
+
+.img {
+  height: 32px !important;
+  width: 32;
+  position: absolute !important;
+  margin-left: -10% !important;
+  margin-top: 0% !important;
+}
+
+.mat-mdc-menu-item:not([disabled]):hover {
+  background-color: #ff4081;
+}

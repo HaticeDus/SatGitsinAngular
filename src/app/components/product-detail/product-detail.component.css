@@ -1,0 +1,210 @@
+.div-container-swiper {
+    width: 800px;
+    margin-top: 10%;
+    margin-left: 10%;
+
+}
+
+swiper-container {
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    margin-top: -93px;
+    margin-bottom: 130px;
+    box-shadow: -121px 73px 208px #e3eef1;
+}
+
+swiper-slide img {
+    width: 100%;
+    height: 652px;
+    object-fit: contain;
+    background-color: #0064801c;
+    display: flex
+}
+
+/* CARD-1 KISMI */
+
+.card-container {
+    margin-top: -48%;
+    margin-left: 53%;
+    position: absolute;
+}
+
+.product-card {
+    width: 352px;
+    height: 150px;
+    border: 1px solid #3f9fb5;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgb(29 57 71);
+    transition: transform 0.3s;
+    flex: 0 0 calc(25% - 20px);
+    margin-left: 37px;
+    margin-top: 33%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#product-header {
+    font-size: large;
+    font-weight: 500;
+}
+
+
+#card-content-container {
+    display: flex;
+}
+
+#product-price {
+    margin: 0 10px;
+    margin-top: -17%;
+    font-size: x-large;
+    color: #ff201e;
+}
+
+#product-date {
+    border-block-end: 1;
+    border-block-end: -8%;
+    margin-block-end: 0%;
+    margin-inline-start: 24%;
+    font-size: 16px;
+    color: cadetblue;
+    margin-top: -15%;
+}
+
+/* CARD-2 */
+
+
+.card-container-2 {
+    margin-top: -48%;
+    margin-left: 57%;
+    position: absolute;
+}
+
+.product-card-2 {
+    width: 752px;
+    height: 490px;
+    border: 1px solid #3f9fb5;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgb(29 57 71);
+    transition: transform 0.3s;
+    flex: 0 0 calc(25% - 20px);
+    margin-left: -40px;
+    margin-top: 41%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card2-category-info {
+    display: flex;
+    margin-top: -95% !important;
+    gap: 9%;
+    margin-inline-start: 1%;
+    font-style: revert;
+    opacity: 0.7;
+}
+
+#product-header-2 {
+    font-size: x-large;
+    font-weight: 500;
+}
+
+#product-header-2-descript {
+    font-size: x-large;
+    font-weight: 500;
+    top: 20%;
+    position: absolute;
+}
+
+#product-describe {
+    margin-top: -43%;
+    position: absolute;
+    opacity: 0.8;
+    margin-left: -1%;
+
+}
+
+/* CARD-3 */
+
+.card-container-3 {
+    margin-top: -48%;
+    margin-left: 74%;
+    position: absolute;
+}
+
+.product-card-3 {
+    width: 352px;
+    height: 150px;
+    border: 1px solid #3f9fb5;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgb(29 57 71);
+    transition: transform 0.3s;
+    flex: 0 0 calc(25% - 20px);
+    margin-left: 37px;
+    margin-top: 33%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#product-header-3 {
+    font-size: x-large;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 13%;
+    color: #707cc0;
+}
+
+.user-icon-image {
+    background-image: url('src/assets/images/icons8-user-100.png');
+    background-size: cover;
+    left: 10%;
+    top: 20%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+#mesagge-button,
+#user-button {
+    transition: transform 0.2s;
+}
+
+#mesagge-button {
+    background-color: #ff6868;
+    font-size: large;
+    font-weight: 500;
+    left: 0;
+    right: 0;
+    position: inherit;
+    margin-left: -1%;
+    margin-right: 0%;
+    margin-top: 2%;
+}
+
+#mesagge-button:hover {
+    background-color: #707cc0;
+    transform: scale(1.1);
+    /* Buton %10 büyüsün */
+}
+
+
+#user-button {
+    background-color: #ffa368;
+    font-size: small;
+    width: 50%;
+    margin-inline-start: 24%;
+    margin-bottom: 5%;
+    font-size:16px;
+}
+
+#user-button:hover {
+    background-color: #707cc0;
+    /* transform: scale(1.1); */
+    /* Buton %10 büyüsün */
+}
+

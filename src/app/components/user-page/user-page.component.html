@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="user-card-container">
+        <mat-card class="user-card">
+            <div class="avatar-container">
+                <img mat-card-avatar src="assets/images/icons8-user-100.png" alt="Image of user">
+            </div>
+            <mat-card-header>
+                <mat-card-title-group>
+                    <mat-card-title>{{ user?.userNameSurname }}</mat-card-title>
+                    <mat-card-subtitle id="subtitle">Kullanıcı</mat-card-subtitle>
+                </mat-card-title-group>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="info-group">
+                    <mat-icon class="info-icon">phone</mat-icon>
+                    <span>
+                        <p class="UI">Tel:</p> {{ user?.userTel }}
+                    </span>
+                </div>
+                <div class="info-group">
+                    <mat-icon class="info-icon">email</mat-icon>
+                    <span>
+                        <p class="UI">E-mail adresi:</p> {{ user?.userEmail }}
+                    </span>
+                </div>
+                <div class="info-group">
+                    <mat-icon class="info-icon">location_on</mat-icon>
+                    <span>
+                        <p class="UI">Adres:</p> {{ user?.userAdress }}
+                    </span>
+                </div>
+                <div class="info-group">
+                    <mat-icon class="info-icon">info</mat-icon>
+                    <span>
+                        <p class="UI">Hakkında:</p> {{ user?.userAbout }}
+                    </span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+
+    <div class="product-card-container">
+        <div *ngFor="let item of productList">
+            <ng-container *ngIf="item.userId === sendingUserId">
+                <mat-card class="product-card">
+                    <mat-card-header>
+                        <mat-card-title id="product-header"> {{item.productName}}</mat-card-title>
+                    </mat-card-header>
+
+                    <div *ngIf="hasMatchingImage(item.productId)">
+                        <img class="custom-card-image" mat-card-image src="{{ getMatchingImageUrl(item.productId) }}"
+                            alt="img product">
+                    </div>
+
+                    <mat-card-content id="card-content-container">
+                        <span id="product-price"> {{item.productPrice}}TL</span>
+                        <span id="product-date">{{ formatListingDate(item.listingDate) }}</span>
+                        <mat-card-actions>
+                            <button mat-fab extended id="product-detail-button" (click)="onCardClicked(item.productId)">Ürünü
+                                incele</button>
+                        </mat-card-actions>
+                    </mat-card-content>
+                </mat-card>
+            </ng-container>
+        </div>
+    </div>
+</div>

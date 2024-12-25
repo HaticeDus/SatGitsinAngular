@@ -1,0 +1,66 @@
+<div class="div-container-swiper">
+    <swiper-container navigation="true" pagination="true" pagination-clickable="true" mousewheel-force-to-axis="true"
+        slides-per-view="1" css-mode="true" >
+        <ng-container *ngFor="let item of imageUrlsArray">
+            <swiper-slide>
+                <img src="{{item}}" alt="Photo of swiper">
+            </swiper-slide>
+        </ng-container>
+    </swiper-container>
+</div>
+
+
+<!-- CARD-1 -->
+
+<div class="card-container">
+    <mat-card class="product-card">
+        <mat-card-header>
+            <mat-card-title id="product-header"> {{findedProduct?.productName}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content id="card-content-container">
+            <span id="product-price"> {{findedProduct?.productPrice}}TL</span>
+            <span id="product-date">{{ formatListingDate(findedProduct?.listingDate) }}</span>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<!-- CARD-3 -->
+
+<div class="card-container-3">
+    <mat-card class="product-card-3">
+        <div mat-card-avatar class="user-icon-image"></div>
+        <mat-card-title id="product-header-3">{{ getUserName() }}</mat-card-title>
+        <!-- <button mat-button id="user-button" routerLink="/userpage">Kullanıcıya git</button> -->
+        <!-- (click)="onCardClicked(findedProduct?.userId)" -->
+        <!-- <ng-container *ngFor="let user of userList"> </ng-container> -->
+        <button mat-fab extended id="user-button"
+            (click)="(findedProduct?.userId === findUser?.userId) ? onUserPrivClicked(findUser?.userId) : onUserBtnClicked(findedProduct?.userId)">
+            {{ (findedProduct?.userId === findUser?.userId) ? 'Profilime git' : 'Kullanıcıya git' }}
+        </button>
+
+    </mat-card>
+</div>
+
+
+<!-- CARD-2 -->
+
+<div class="card-container-2">
+    <mat-card class="product-card-2">
+        <mat-card-title id="product-header-2"> Detay </mat-card-title>
+        <mat-card-content id="card-content-container-2"></mat-card-content>
+        <div class="card2-category-info">
+            <p>Kategori: {{ getCategoryNameForProduct() }}</p>
+            <p>Durum: {{ getCategoryConditionName() }}</p>
+        </div>
+
+        <mat-card-title id="product-header-2-descript"> Açıklama </mat-card-title>
+        <mat-card-content id="card-content-container-2-descript">
+            <span id="product-describe"> {{findedProduct?.productDescript}}</span>
+        </mat-card-content>
+    </mat-card>
+
+    <button mat-fab extended id="mesagge-button" *ngIf="!isCurrentUserSeller()"
+        (click)="onMsgBtnClicked(findedProduct?.userId)">Ürün ile
+        ilgili {{
+        getUserName() }} kullanıcısına soru sor <mat-icon>sms</mat-icon></button>
+</div>

@@ -1,0 +1,78 @@
+<mat-card>
+    <mat-card-content>
+        <div mat-dialog-content class="registration-form">
+            <h2 class="form-title">Kayıt Ol
+                <hr>
+            </h2>
+
+            <form [formGroup]="registerForm" (ngSubmit)="addUser()">
+
+                <div class="form-container">
+
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Ad Soyad</mat-label>
+                        <input class="genis-input" formControlName="userNameSurname" #userNameSurname matInput
+                            placeholder="Adınızı ve soyadınızı giriniz" maxlength="30">
+                        <mat-icon matSuffix>person</mat-icon>
+                        <mat-hint [align]="'end'">{{ userNameSurname.value.length }} /30</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Email</mat-label>
+                        <input class="genis-input" type="email" formControlName="userEmail" matInput
+                            placeholder="Email giriniz" maxlength="70">
+                        <mat-icon matSuffix>email</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Şifre</mat-label>
+                        <input class="genis-input" type="{{ showPassword ? 'text' : 'password' }}"
+                            formControlName="userPassword" matInput placeholder="Şifre giriniz" maxlength="10">
+                        <mat-icon matSuffix (click)="toggleShowPassword()">
+                            {{ showPassword ? 'visibility' : 'visibility_off' }}
+                        </mat-icon>
+
+                        <div class="custom-hint" *ngIf="isPasswordHintVisible()">
+                            Şifre 10 karakterden oluşmalıdır ve en az bir küçük harf, bir büyük harf, bir rakam ve
+                            bir özel karakter içermelidir.
+                        </div>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Tel</mat-label>
+                        <span matPrefix>+0&nbsp;</span>
+                        <input class="genis-input" type="tel" formControlName="userTel" matInput
+                            placeholder="Telefon numaranızı giriniz" maxlength="10">
+                        <mat-icon matSuffix>call</mat-icon>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Adres</mat-label>
+                        <textarea class="genis-input" formControlName="userAdress" #adress1 maxlength="150" matInput
+                            placeholder="Güncel adresinizi giriniz" maxlength="150"></textarea>
+                        <mat-icon matSuffix>person_pin_circle</mat-icon>
+                        <mat-hint [align]="'end'">{{ adress1.value.length }} / 150</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Hakkımda</mat-label>
+                        <textarea class="genis-input" formControlName="userAbout" #userAbout matInput
+                            placeholder="isteğe bağlı" maxlength="90"></textarea>
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-hint [align]="'end'">{{ userAbout.value.length }} / 90</mat-hint>
+                    </mat-form-field>
+
+
+                    <div class="button-container">
+                        <button mat-raised-button color="primary" class="button-kaydol">Kaydet</button>
+                    </div>
+                    <span class="span-container">Ya da <br> Kayıtlı mısın?</span>
+                    <div class="button-container">
+                        <a routerLink="/login" mat-raised-button color="accent">Giriş Yap</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,54 @@
+<div class="product-form-container">
+    <h2>Ürün Ekle</h2>
+    <form class="product-form" (ngSubmit)="addProduct()">
+        
+        <label for="productName">Ürün Adı:</label>
+        <input type="text" id="productName" [(ngModel)]="productName" name="productName"
+            placeholder="Ürünün adını girin" maxlength="70" required>
+        <mat-hint [align]="'end'">{{ productName.length }} / 70</mat-hint>
+
+        <label for="productPrice">Ürün Fiyatı:</label>
+        <input type="number" id="productPrice" [(ngModel)]="productPrice" placeholder="Ürünün fiyatını girin"
+            name="productPrice" required>
+        <mat-hint style=" margin-left: 80%;">Ürünün fiyatı TL cinsinden</mat-hint>
+
+
+        <label for="productDescript">Açıklama:</label>
+        <textarea id="productDescript" [(ngModel)]="productDescript" name="productDescript" rows="3"
+            placeholder="Ürün açıklaması girin" required maxlength="1500"></textarea>
+        <mat-hint [align]="'end'">{{ productDescript.length }} / 1500</mat-hint>
+
+        <label for="productCondition">Ürün Durumu:</label>
+        <select id="productCondition" [(ngModel)]="selectedproductConditionId" name="productCondition" required>
+            <option *ngFor="let condition of productConditionList" [value]="condition.productConditionId">{{
+                condition.productCondition1 }}</option>
+        </select>
+
+        <label for="category">Kategori:</label>
+        <select id="category" [(ngModel)]="selectedcategoryId" name="category" required>
+            <option *ngFor="let category of categoryList" [value]="category.categoryId">{{ category.categoryName }}
+            </option>
+        </select>
+
+        <!-- start add img -->
+        <div class="image-container">
+            <label class="custom-file-input-button" for="productImages">Resim Ekle: <span>Max 5 Resim ekleyebilirsiniz</span></label>
+            <div class="image-preview-container" *ngFor="let _ of repeatArray; let i = index">
+                <label class="file-input-label">
+                    <input type="file" id="productImages" (change)="onFileChange($event, i)" class="file-input">
+                    <mat-icon>add_photo_alternate</mat-icon>
+                </label>
+            </div>
+        </div>
+        <div class="image-preview-row">
+            <div *ngFor="let imageUrl of selectedImages" class="image-preview">
+                <img class="prewiev-img-width" [src]="imageUrl" alt="">
+            </div>
+        </div>
+        <!-- end add img -->
+
+
+
+        <button type="submit" class="add-button" >Ürünü Ekle</button>
+    </form>
+</div>

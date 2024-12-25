@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="user-list">
+        <h3>Önceki Mesajlaşmalarım</h3>
+        <mat-list>
+            <mat-list-item *ngFor="let user of userMessageRelations" (click)="selectUser(user)">
+                <!-- <button mat-raised-button class="btn-user">
+                    {{ user.userNameSurname }}
+                </button> -->
+                <button mat-fab extended class="btn-user">{{ user.userNameSurname }}</button>
+            </mat-list-item>
+        </mat-list>
+    </div>
+
+    <div class="chat-area">
+        <ng-container *ngIf="selectedUser">
+            <h3>{{ selectedUser.userNameSurname }} ile Ürün hakkında anlaş!</h3>
+            <div class="message-list">
+                <!-- db'den gelen mesajlar -->
+                <mat-card class="message-card" *ngFor="let message of selectedUserMessages" class="message-item"
+                    [ngClass]="{'my-message': isMyMessage(message), 'received-message': !isMyMessage(message)}">
+                    <ng-container *ngIf="isMyMessage(message); else received">
+                        <p><span>Siz:</span> {{ message.messageText }}</p>
+                        <mat-card-footer>{{ formatDate(message.messageDate) }}</mat-card-footer>
+                    </ng-container>
+                    <ng-template #received>
+                        <p> <span>{{ selectedUser.userNameSurname }} </span>: {{ message.messageText }}</p>
+                        <mat-card-footer>{{ formatDate(message.messageDate) }}</mat-card-footer>
+                    </ng-template>
+                </mat-card>
+
+                <!-- signalR'dan gelen mesajlar -->
+                <mat-card *ngFor="let message of messages"
+                    [ngClass]="{'my-message': message.user === findUser?.userNameSurname, 'received-message': message.user !== findUser?.userNameSurname}"
+                    class="message-card message-item">
+                    <p>
+                        <span *ngIf="message.user === findUser?.userNameSurname">Siz</span>
+                        <span *ngIf="message.user !== findUser?.userNameSurname">{{ message.user }}</span>
+                        : {{ message.content }}
+                    </p>
+                    <mat-card-footer> {{ getCurrentTime() }} </mat-card-footer>
+                </mat-card>
+            </div>
+
+            <div class="new-message">
+                <form class="message-form" (ngSubmit)="sendMessage(user, newMessage)">
+                    <mat-form-field>
+                        <textarea matInput [(ngModel)]="newMessage" name="messageText" class="input-container"
+                            placeholder="Type your message..."></textarea>
+                    </mat-form-field>
+                    <button mat-raised-button type="submit" color="primary" (click)="saveMessage()">Send</button>
+                    <!--  (click)="saveMessage()" -->
+                </form>
+            </div>
+        </ng-container>
+        <div *ngIf="!selectedUser" class="select-user">
+            <p>Select a user to start chatting.</p>
+        </div>
+    </div>
+</div>

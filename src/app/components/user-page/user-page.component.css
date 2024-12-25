@@ -1,0 +1,170 @@
+.product-card {
+    width: 280px;
+    height: 280px;
+    border: 1px solid #3f9fb5;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgb(29 57 71);
+    transition: transform 0.3s;
+    flex: 0 0 calc(25% - 20px);
+    margin-left: 25px;
+    margin-bottom: 25px;
+    /* margin-top: 20%; */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: scale(1.1);
+}
+
+.custom-card-image {
+    width: 100%;
+    height: 85px;
+    object-fit: cover;
+    margin-top: -15%;
+    position: absolute;
+}
+
+/* CONTAINERS */
+.container {
+    display: flex;
+    align-items: flex-start;
+    /* Üstten aşağıya hizala */
+    margin-top: 45px;
+}
+
+.user-card-container {
+    float: left;
+    /* Kullanıcı kartını sayfanın sol tarafına yerleştir */
+    margin-right: 20px;
+    /* Kartlar arasında boşluk bırak */
+}
+
+.product-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* Kartları sağa hizala */
+    align-items: flex-start;
+    /* Üstten aşağıya hizala */
+    margin-top: 45px;
+}
+
+/* CONTAINERS */
+#product-header {
+    font-size: large;
+    font-weight: 500;
+}
+
+
+#product-price {
+    margin: 0 0px;
+    margin-top: -17%;
+    font-size: larger;
+    color: #ff201e;
+}
+
+#product-date {
+    border-block-end: 1;
+    border-block-end: -8%;
+    margin-block-end: 0%;
+    margin-inline-start: 37%;
+    font-size: 13px;
+    color: cadetblue;
+    margin-top: -16%;
+}
+
+#product-detail-button {
+    margin-left: -60%;
+    margin-top: -3%;
+    background-color: #ff6969;
+    font-size: small;
+    margin-left: 1%;
+}
+
+#product-detail-button:hover {
+    background-color: #111f79;
+}
+
+/* Küçük ekranlarda kartların 2'lü sıralama */
+@media (max-width: 767px) {
+    .product-card {
+        flex: 0 0 calc(50% - 20px);
+        /* Kartlar sayfanın yüzde 50'sinden biraz küçük olacak */
+    }
+}
+
+/* USER CARD  FIN*/
+
+.user-card {
+    width: 500px;
+    height: 700px;
+    margin: 30px;
+    align-items: center;
+    border: 1px solid #ccc;
+    /* Sınır rengi ve genişliği */
+    box-shadow: 0 100px 150px #ff40811a;
+    border-radius: 10px;
+    /* Köşe yuvarlatma */
+}
+
+mat-card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+mat-card-subtitle {
+    font-size: 16px;
+}
+
+.info-group {
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+    margin-bottom: 7%;
+}
+
+.info-icon {
+    margin-right: 9px;
+    margin-top: 0px;
+    color: #ff4081;
+}
+
+mat-icon {
+    font-size: 20px;
+}
+
+.avatar-container {
+    display: flex;
+    align-items: center;
+    /* Resmi dikeyde ortala */
+}
+
+.mat-mdc-card-avatar {
+    height: 164px;
+    width: 120px;
+    flex-shrink: 0;
+    margin-bottom: 16px;
+    object-fit: contain;
+}
+
+#subtitle {
+    font-size: unset;
+    opacity: 0.7;
+    margin-left: 15px;
+}
+
+.UI {
+    font-size: 16px;
+    font-weight: bold;
+    color: #707cc0;
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}

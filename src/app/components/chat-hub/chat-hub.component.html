@@ -1,0 +1,21 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="message-container">
+
+
+  <form class="message-form" (ngSubmit)="sendMessage(user, message)">
+    <!-- <input type="text" [(ngModel)]="user" name="user" class="input-field" placeholder="User"> -->
+    <mat-form-field>
+      <input matInput [(ngModel)]="message" name="message" class="input-field" placeholder="Mesajınızı girin">
+    </mat-form-field>
+    <button type="submit" class="send-button" (click)="saveMessages()">Send</button>
+  </form>
+
+  <!-- gelen mesajlar burada -->
+  <div class="message-list-div">
+    <cdk-virtual-scroll-viewport class="example-viewport" itemSize="50">
+      <!-- <div *ngFor="let beforeMsg of messageList" class="message-item"> -->
+      <!-- {{getUserName(beforeMsg.senderUserId)}}:{{beforeMsg.messageText}}</div> -->
+      <div *ngFor="let afterMsg of messages" class="message-item">{{afterMsg}}</div>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>
